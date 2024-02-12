@@ -4,6 +4,7 @@
  */
 package days;
 
+import days.Weekdays.Day;
 import java.util.Scanner;
 
 /**This class takes String input from user 
@@ -16,19 +17,17 @@ import java.util.Scanner;
  *
  * @author sivagamasrinivasan
  */
-public class Days {
 
-    /**
-     * @param args the command line arguments
-     */
+
+
+
+public class Days {
     public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the day number (MONDAY, TUESDAY, etc.):");
+        String input = in.next().toUpperCase(); // Convert input to uppercase
+        Weekdays.Day day = Weekdays.Day.valueOf(input); // Convert input to enum constant
+        Weekdays t = new Weekdays();
+        t.nameOfDay(day);
+    }
 }
